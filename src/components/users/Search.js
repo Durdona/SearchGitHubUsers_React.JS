@@ -43,6 +43,12 @@ class Search extends Component {
 						autoComplete="off"
 						value={this.state.text}
 						onChange={this.handleChange}
+						style={{
+							backgroundColor: 'rgba(0,0,0, 0.2)',
+							padding: '10px',
+							borderRadius: '5px',
+							outline: 'none'
+						}}
 					/>
 					<input type="submit" value="Search" className="btn btn-dark btn-block" />
 				</form>
@@ -56,7 +62,7 @@ class Search extends Component {
 							background: 'purple'
 						}}
 					>
-						Clear
+						Clear Search
 					</button>
 				)}
 			</div>

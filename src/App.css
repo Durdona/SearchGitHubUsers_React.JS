@@ -3,7 +3,8 @@
 /* Global Styles */
 :root {
 	--primary-color: #dc3545;
-	--dark-color: #333333;
+	/* --dark-color: #333333; */
+	--dark-color: #24292e;
 	--light-color: #f4f4f4;
 	--danger-color: #dc3545;
 	--success-color: #28a745;
@@ -211,6 +212,7 @@ img {
 	margin-right: 0.5rem;
 	transition: opacity 0.2s ease-in;
 	outline: none;
+	border-radius: 5px;
 }
 
 .btn-link {
@@ -315,6 +317,9 @@ img {
 input {
 	margin: 1.2rem 0;
 }
+::placeholder {
+	/* color: black; */
+}
 
 .form-text {
 	display: block;
@@ -355,7 +360,7 @@ table th {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0.7rem 2rem;
+	padding: 0.6rem 2rem;
 	z-index: 1;
 	width: 100%;
 	opacity: 0.9;
@@ -370,6 +375,8 @@ table th {
 	color: #fff;
 	padding: 0.45rem;
 	margin: 0 0.25rem;
+	font-size: 1.1rem;
+	letter-spacing: 1px;
 }
 
 .navbar a:hover {
