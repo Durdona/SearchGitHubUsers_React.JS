@@ -40,13 +40,22 @@ class Search extends Component {
 						type="text"
 						name="text"
 						placeholder="Search Users ..."
+						autoComplete="off"
 						value={this.state.text}
 						onChange={this.handleChange}
 					/>
 					<input type="submit" value="Search" className="btn btn-dark btn-block" />
 				</form>
 				{showClear && (
-					<button className="bt btn-light btn-block" onClick={clearUsers}>
+					<button
+						className="btn btn-light btn-block"
+						onClick={clearUsers}
+						style={{
+							border: '1px solid balck',
+							color: 'white',
+							background: 'purple'
+						}}
+					>
 						Clear
 					</button>
 				)}
