@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Search extends Component {
 	constructor (props) {
@@ -9,6 +10,12 @@ class Search extends Component {
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
+
+	static propTypes = {
+		searchUsers: PropTypes.func.isRequired,
+		clearUsers: PropTypes.func.isRequired,
+		showClear: PropTypes.bool.isRequired
+	};
 
 	handleChange (e) {
 		this.setState({ [e.target.name]: e.target.value });
@@ -32,6 +39,11 @@ class Search extends Component {
 					/>
 					<input type="submit" value="Search" className="btn btn-dark btn-block" />
 				</form>
+				{this.props.showClear && (
+					<button className="bt btn-light btn-block" onClick={this.props.clearUsers}>
+						Clear
+					</button>
+				)}
 			</div>
 		);
 	}
