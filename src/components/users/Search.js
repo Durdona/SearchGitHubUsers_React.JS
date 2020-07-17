@@ -44,7 +44,7 @@ class Search extends Component {
 						value={this.state.text}
 						onChange={this.handleChange}
 						style={{
-							backgroundColor: 'rgba(0,0,0, 0.2)',
+							backgroundColor: 'rgba(0,0,0, 0.1)',
 							padding: '10px',
 							borderRadius: '5px',
 							outline: 'none'
@@ -57,9 +57,9 @@ class Search extends Component {
 						className="btn btn-light btn-block"
 						onClick={clearUsers}
 						style={{
-							border: '1px solid balck',
+							border: '1px solid black',
 							color: 'white',
-							background: 'purple'
+							background: 'rgba(145, 61, 136, 1)'
 						}}
 					>
 						Clear Search
