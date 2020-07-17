@@ -4,11 +4,13 @@ import Navbar from './components/layout/Navbar';
 import Users from './components/users/Users';
 import axios from 'axios';
 import Search from './components/users/Search';
+import Alert from './components/layout/Alert';
 
 class App extends Component {
 	state = {
 		users: [],
-		loading: false
+		loading: false,
+		alert: null
 	};
 
 	// show default users
@@ -38,15 +40,23 @@ class App extends Component {
 		this.setState({ users: [], loading: false });
 	};
 
+	handleSetAlert = (msg, type) => {
+		this.setState({ alert: { msg: msg, type: type } });
+
+		setTimeout(() => this.setState({ alert: null }), 5000);
+	};
+
 	render () {
 		return (
 			<div className="App">
-				<Navbar title="GitHub Finder" icon="fab fa-github" />
+				<Navbar title=" GitHub Finder" icon="fab fa-github" />
 				<div className="container">
+					<Alert alert={this.state.alert} />
 					<Search
 						searchUsers={this.handleSearchUsers}
 						clearUsers={this.handleClearUsers}
 						showClear={this.state.users.length > 0 ? true : false}
+						setAlert={this.handleSetAlert}
 					/>
 					<Users loading={this.state.loading} users={this.state.users} />
 				</div>
