@@ -12,7 +12,6 @@ const GithubState = (props) => {
 		repos: [],
 		loading: false
 	};
-
 	const [ state, dispatch ] = useReducer(GithubReducer, initialState);
 
 	//  Search Github Users
@@ -30,7 +29,21 @@ const GithubState = (props) => {
 		});
 	};
 
-	//  Get User
+	// Get single Github user
+	const getUser = async (username) => {
+		setLoading();
+
+		console.log(username);
+		const res = await axios.get(
+			`https://api.github.com/users/${username}?&client_id=${process.env
+				.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+		);
+		console.log(res.data);
+		dispatch({
+			type: GET_USER,
+			payload: res.data
+		});
+	};
 
 	//  Get Repos
 
@@ -48,7 +61,8 @@ const GithubState = (props) => {
 				repos: state.repos,
 				loading: state.loading,
 				handleSearchUsers,
-				handleClearUsers
+				handleClearUsers,
+				getUser
 			}}
 		>
 			{props.children}

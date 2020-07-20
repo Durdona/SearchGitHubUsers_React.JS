@@ -41,7 +41,7 @@ const Search = ({ setAlert }) => {
 			{githubContext.users.length > 0 && (
 				<button
 					className="btn btn-light btn-block"
-					onClick={githubContext.clearUsers}
+					onClick={githubContext.handleClearUsers}
 					style={{
 						border: '1px solid black',
 						color: 'white',
