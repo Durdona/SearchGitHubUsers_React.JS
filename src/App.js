@@ -62,10 +62,6 @@ const App = () => {
 	};
 
 	// Clear users from state
-	const handleClearUsers = () => {
-		setUsers([]);
-		setLoading(false);
-	};
 
 	// Set Alert
 	const handleSetAlert = (msg, type) => {
@@ -87,11 +83,7 @@ const App = () => {
 								path="/"
 								render={(props) => (
 									<Fragment>
-										<Search
-											clearUsers={handleClearUsers}
-											showClear={users.length > 0 ? true : false}
-											setAlert={handleSetAlert}
-										/>
+										<Search setAlert={handleSetAlert} />
 										<Users loading={loading} users={users} />
 									</Fragment>
 								)}
