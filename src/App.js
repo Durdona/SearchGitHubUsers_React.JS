@@ -9,6 +9,7 @@ import Alert from './components/layout/Alert';
 import About from './components/pages/About';
 
 import GithubState from './context/github/GithubState';
+import AlertState from './context/github/AlertState';
 
 const App = () => {
 	const [ alert, setAlert ] = useState(null);
@@ -41,28 +42,30 @@ const App = () => {
 
 	return (
 		<GithubState>
-			<Router>
-				<div className="App">
-					<Navbar title="GitHub Finder" icon="fab fa-github" />
-					<div className="container">
-						<Alert alert={alert} />
-						<Switch>
-							<Route
-								exact
-								path="/"
-								render={(props) => (
-									<Fragment>
-										<Search setAlert={handleSetAlert} />
-										<Users />
-									</Fragment>
-								)}
-							/>
-							<Route exact path="/about" component={About} />
-							<Route exact path="/user/:login" component={User} />
-						</Switch>
+			<AlertState>
+				<Router>
+					<div className="App">
+						<Navbar title="GitHub Finder" icon="fab fa-github" />
+						<div className="container">
+							<Alert alert={alert} />
+							<Switch>
+								<Route
+									exact
+									path="/"
+									render={(props) => (
+										<Fragment>
+											<Search setAlert={handleSetAlert} />
+											<Users />
+										</Fragment>
+									)}
+								/>
+								<Route exact path="/about" component={About} />
+								<Route exact path="/user/:login" component={User} />
+							</Switch>
+						</div>
 					</div>
-				</div>
-			</Router>
+				</Router>
+			</AlertState>
 		</GithubState>
 	);
 };
