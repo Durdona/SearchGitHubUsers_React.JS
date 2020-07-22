@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/layout/Navbar';
@@ -9,11 +9,9 @@ import Alert from './components/layout/Alert';
 import About from './components/pages/About';
 
 import GithubState from './context/github/GithubState';
-import AlertState from './context/github/AlertState';
+import AlertState from './context/alert/AlertState';
 
 const App = () => {
-	const [ alert, setAlert ] = useState(null);
-
 	// show default users
 	// async componentDidMount () {
 	// 	console.log(process.env.REACT_APP_GITHUB_CLIENT_SECRET);
@@ -34,11 +32,6 @@ const App = () => {
 	// Clear users from state
 
 	// Set Alert
-	const handleSetAlert = (msg, type) => {
-		setAlert({ msg, type });
-
-		setTimeout(() => setAlert(null), 5000);
-	};
 
 	return (
 		<GithubState>
@@ -47,14 +40,14 @@ const App = () => {
 					<div className="App">
 						<Navbar title="GitHub Finder" icon="fab fa-github" />
 						<div className="container">
-							<Alert alert={alert} />
+							<Alert />
 							<Switch>
 								<Route
 									exact
 									path="/"
 									render={(props) => (
 										<Fragment>
-											<Search setAlert={handleSetAlert} />
+											<Search />
 											<Users />
 										</Fragment>
 									)}
