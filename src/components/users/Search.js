@@ -5,6 +5,7 @@ import AlertContext from '../../context/alert/alertContext';
 
 const Search = () => {
 	const githubContext = useContext(GithubContext);
+	const alertContext = useContext(AlertContext);
 	const [ text, setText ] = useState('');
 
 	const handleChange = (e) => {
@@ -13,7 +14,7 @@ const Search = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (text === '') {
-			setAlert('  Please enter something ...', 'light');
+			alertContext.handleSetAlert('  Please enter something ...', 'light');
 		} else {
 			githubContext.handleSearchUsers(text);
 			setText('');
