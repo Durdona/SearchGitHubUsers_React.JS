@@ -6,7 +6,7 @@
 	--dark-color: #333333;
 	/* --dark-color: #24292e; */
 	/* --light-color: #f4f4f4; */
-	--light-color: lightgray;
+	--light-color: rgba(0, 0, 0, 0.5);
 	--danger-color: #dc3545;
 	--success-color: #28a745;
 }
@@ -24,18 +24,19 @@ body {
 	background-color: #fff;
 	color: #333;
 	font-weight: 100;
+	background: url(http://res.cloudinary.com/doijyfiv5/image/upload/q_92/v1523417961/official_xyf206.jpg) top left;
 }
 .fa-github {
 	padding-right: 10px;
 }
 
 a {
-	color: var(--primary-color);
+	color: var(--dark-color);
 	text-decoration: none;
 }
 
 a:hover {
-	color: #666;
+	color: var(--primary-color);
 }
 
 ul {
@@ -245,6 +246,7 @@ img {
 	background: var(--light-color);
 	color: #333;
 	border-radius: 5px;
+	border: 1px solid black;
 }
 
 .alert {
@@ -268,7 +270,8 @@ img {
 .badge-light,
 .alert-light {
 	background: var(--light-color);
-	color: #333;
+	/* color: #333; */
+	color: white;
 }
 
 .btn-dark,
@@ -318,11 +321,25 @@ img {
 }
 
 /* Forms */
+.searchForm {
+	position: relative;
+}
 input {
 	margin: 1.2rem 0;
 }
 ::placeholder {
 	/* color: black; */
+	/* padding-left: 40px; */
+}
+input.searchInput {
+	padding-left: 50px;
+}
+.fa-users {
+	position: absolute;
+	left: 15px;
+	top: calc(77% - 1.1em);
+	color: rgba(0, 0, 0, .7);
+	font-size: 1.3rem;
 }
 
 .form-text {

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Navbar = ({ icon, title }) => {
 	// destructuring props extracting icon & title
 	return (
-		<nav className="navbar bg-danger">
+		<nav className="navbar bg-dark">
 			<h2 style={{ letterSpacing: '1px' }}>
 				<i className={icon} style={{ fontSize: '2.2rem' }} />
 				{title}

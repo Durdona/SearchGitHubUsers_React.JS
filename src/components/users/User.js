@@ -40,7 +40,7 @@ const User = ({ match }) => {
 				Back To Search
 			</Link>
 			Hireable: {' '}
-			{hireable ? <i className="fas fa-check text-success" /> : <i className="fas fa-times-circle text-danger" />}
+			{hireable ? <i className="fas fa-check text-success" /> : <i className="far fa-times-circle text-danger" />}
 			<div className="card grid-2">
 				<div className="all-center">
 					<img src={avatar_url} className="round-img" style={{ width: '150px' }} alt="" />
@@ -86,9 +86,9 @@ const User = ({ match }) => {
 				</div>
 			</div>
 			<div className="card text-center">
-				<div className="badge badge-primary">Followers: {followers}</div>
-				<div className="badge badge-success">Following: {following}</div>
-				<div className="badge badge-dark">Public Repos: {public_repos}</div>
+				<div className="badge badge-light">Followers: {followers}</div>
+				<div className="badge badge-light">Following: {following}</div>
+				<div className="badge badge-light">Public Repos: {public_repos}</div>
 				<div className="badge badge-light">Public Gists: {public_gists}</div>
 			</div>
 			<Repos repos={repos} />
